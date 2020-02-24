@@ -1,3 +1,50 @@
 // Place all the styles related to the groups controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.groupcreate {
+  margin-top: 10vh;
+  .titleArea {
+    text-align: center;
+    h1 {font-size: 2rem;}
+    margin-bottom: 10vh;
+  }
+    .container {
+      .form-input {
+        margin: 0 auto 1.5rem auto;
+        max-width: 500px;
+        .form-control {
+          background: #f6f8fa;
+        }
+      }
+      .check-box {
+        max-width: 500px;
+        margin: 0 auto 1.5rem auto;
+        
+        .check-name {
+          background: red;
+        }
+      }
+      .actions {
+        text-align: center;
+      }
+    }
+  
+  .btnsubmitBtn {
+    padding: 12px;
+    width: 200px;
+    border-radius: 21px;
+    background: #29b744;
+    color: #fff;
+    text-align: center;
+    border: none;
+    margin-top: 20px;
+    opacity: 1;
+    transition: opacity .5s;
+    cursor: pointer;
+    &:hover {
+      opacity: .7;
+    }
+  }
+}
