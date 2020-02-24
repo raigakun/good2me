@@ -1,0 +1,23 @@
+<div class='groupcreate'> 
+  <div class="titleArea">
+  <h2>グループを編集</h2>
+  <div class="text-center m-3">or</div>
+    <%= link_to "トップページへ戻る", :back %>
+  </div>
+
+  <div class='container'>
+  <%= form_with(model:@group,local: true) do |f| %>
+
+  <div class= 'form-input'>グループ名
+      <%= f.text_field :name, placeholder: "グループ名を入力してください",class: "form-control" %>
+  </div>
+
+  <div class= 'check-box'>メンバーを選択してください<br>   
+      <%= f.collection_check_boxes :user_ids, User.all, :id, :username, class: "check-name" %>
+  </div> 
+
+  <div class="actions">
+      <%= f.submit "グループを編集する", class: "btn submitBtn" %>
+  </div>   
+  <% end %>
+
