@@ -18,5 +18,14 @@
         <%= f.submit "サインイン", class: "loginBtn" %>
       </div>
     <% end %>
+      <div class="form-easy">
+        <%= form_for(resource, as: resource_name, url:registration_path(resource_name)) do |f| %>
+          <%= f.hidden_field :username, value:"テスト"%>
+          <%= f.hidden_field :password, value:"test0000"%>
+          <%= f.hidden_field :password_confirmation, value:"test0000"%>
+          <%= f.submit "かんたんログイン", class: "btn submitBtn2"%>
+        <% end %>
+        <%# <%= link_to 'かんたんログイン', testsessions_path, method: :post, class:"btn submitBtn2" %> 
+      </div>  
   </div>
 </div>

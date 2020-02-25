@@ -1,0 +1,22 @@
+<div class="commenteditPgae">
+  <div class='container'>
+    <%= form_with model: @comment, url: { action: :update }, html: { class: 'commenteditForm' }, local: true do |f| %>
+      <% if @comment.errors.any? %>
+        <p class="text-danger">タイトルは1～255文字以内で入力してください</p>
+      <% end %>
+      <div class="commenteditForm_title">
+        <%= f.label :title %>
+        <%= f.text_field :title, class: "form-control", placeholder: "コメント名" %>
+      </div>
+      <div class="commenteditForm_memo">
+        <%= f.label :memo %>
+        <%= f.text_area :memo, class: "form-control", placeholder: "詳細" %>
+      </div>
+      <div class="commenteditForm_memo">
+        <label>タスク名</label>
+        <%= select :comment, :task_id, @tasks.map{ |t| [t.title, t.id] }, {}, { class: 'form-control' } %>
+      </div>
+      <div class="text-center"><%= f.submit "更新する", class: "submitBtn" %></div>
+    <% end %>
+  </div>
+</div>

@@ -3,18 +3,15 @@
     <ul class="header_menu">
       <li class="nav-link"><%= current_user.username %>さん</li>
        <li class="header_menu_groups">
-       <%= link_to "Create Groups", new_group_path,class: "nav-link",method: :get %></li>
-       <li class="header_menu_currents">
+       <%= link_to "Create Groups", new_group_path,class: "nav-link",method: :get %><a class="header_menu_currents">
        所属グループ：
        <% current_user.groups.each do |group|%>
        <%= group.name%>
-       <% end %>
-       </li>
+       <% end %></a></li>
       <li class="header_menu_title"><%= link_to "TasKING", root_path, class: "nav-link" %></li>
       <li>
         <ul class="header_menu_inner">
-          <%# リストを作成するリンクは今後開発していくので、今は"#"にしておきます。 %>
-          <li><%= link_to "Create Tasks", "#", class: "nav-link listNew" %></li>
+          <li><%= link_to "Create Tasks", new_task_path, class: "nav-link listNew" %></li>
           <li><%= link_to "Edit", edit_user_registration_path, class: "nav-link", method: :get %></li>
           <li><%= link_to "Sign out", destroy_user_session_path, class: "nav-link", method: :delete %></li>
 

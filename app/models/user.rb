@@ -2,13 +2,15 @@ class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   #usernameを必須・一意とする
- validates :username,uniqueness: true
+ 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
   has_many :group_users
   has_many :groups, through: :group_users
+  has_many :tasks, dependent: :destroy
 
+  validates :username, presence: true, length: { maximum: 20 }
   #usernameを利用してログインするようにオーバーライド
   def self.find_first_by_auth_conditions(warden_conditions)
     conditions = warden_conditions.dup

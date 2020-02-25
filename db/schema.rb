@@ -10,7 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_24_080847) do
+ActiveRecord::Schema.define(version: 2020_02_25_061850) do
+
+  create_table "comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "title", null: false
+    t.text "memo"
+    t.bigint "task_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["task_id"], name: "index_comments_on_task_id"
+  end
 
   create_table "group_users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "group_id"
@@ -28,6 +37,14 @@ ActiveRecord::Schema.define(version: 2020_02_24_080847) do
     t.index ["name"], name: "index_groups_on_name", unique: true
   end
 
+  create_table "tasks", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "title", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_tasks_on_user_id"
+  end
+
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
@@ -41,4 +58,5 @@ ActiveRecord::Schema.define(version: 2020_02_24_080847) do
 
   add_foreign_key "group_users", "groups"
   add_foreign_key "group_users", "users"
+  add_foreign_key "tasks", "users"
 end

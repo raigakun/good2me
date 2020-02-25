@@ -1,4 +1,31 @@
-<p>このページは仮のトップページです。</p>
-
-<%# ここに追加する %>
-<%= link_to "仮のボタンです", "#", class: "btn btn-primary" %>
+<div class="topPage">
+  <div class="taskWrapper">
+    <% @tasks.each do |task| %>
+      <div class="task">
+        <div class="task_header">
+          <h2 class="task_header_title"><%= task.title %></h2>
+          <div class="task_header_action">
+             <%= link_to content_tag(:i, '', class: 'fas fa-trash'), task, method: :delete, data: { confirm: "#{task.title}を本当に削除しますか？" } %>
+            <%= link_to(content_tag(:i, '', class: 'fas fa-pen'), edit_task_path(task)) %>
+          </div>
+        </div>
+        <div class="commentWrapper">
+          <% task.comments.each do |comment| %>
+            <%= link_to task_comment_path(task, comment), class:"commentDetail_link" do %>
+              <div class="comment">
+                <h3 class="comment_title"><%= comment.title %></h3>
+                <% if comment.memo.size > 0 %>
+                  <div class="comment_detail is-exist"><i class="fas fa-bars"></i></div>
+                <% end %>
+              </div>
+            <% end %>
+          <% end %>
+          <div class="addComment">
+            <i class="far fa-plus-square"></i>
+            <%= link_to "さらにコメントを追加", new_task_comment_path(task), class: "addComment_link" %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
