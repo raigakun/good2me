@@ -6,12 +6,12 @@ ja:
         password: "パスワード"
         password_confirmation: "パスワード確認"
         email: "メールアドレス"
-    errors:
-      messages:
-        record_invalid: 'バリデーションに失敗しました: %{errors}'
-        restrict_dependent_destroy:
-          has_one: "%{record}が存在しているので削除できません"
-          has_many: "%{record}が存在しているので削除できません"
+    # errors:
+    #   messages:
+    #     record_invalid: 'バリデーションに失敗しました: %{errors}'
+    #     restrict_dependent_destroy:
+    #       has_one: "%{record}が存在しているので削除できません"
+    #       has_many: "%{record}が存在しているので削除できません"
   date:
     abbr_day_names:
     - 日
@@ -130,6 +130,7 @@ ja:
       model_invalid: 'バリデーションに失敗しました: %{errors}'
       not_a_number: は数値で入力してください
       not_an_integer: は整数で入力してください
+      not_saved: アカウント関係の処理に失敗しました
       odd: は奇数にしてください
       other_than: は%{count}以外の値にしてください
       present: は入力しないでください
