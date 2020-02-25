@@ -35,6 +35,38 @@
           }
         }
       }
+      .commentWrapper {
+        overflow-y: scroll;
+        max-height: 76vh;
+        .commentDetail_link {
+          text-decoration: none;
+          color: #323232;
+        }
+        .comment {
+          margin-bottom: 10px;
+          padding: 10px;
+          background-color: white;
+          &_title {
+            font-size: 17px;
+          }
+          &_detail {
+            display: none;
+            &.is-exist {
+              display: block;
+              color: #999;
+              & > i {
+                display: block;
+              }
+            }
+          }
+        }
+        .addComment {
+          color: #8c8c8c;
+          &_link {
+            color: #8c8c8c;
+          }
+        }
+      }
     }
   }
 }

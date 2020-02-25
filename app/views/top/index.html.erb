@@ -9,6 +9,22 @@
             <%= link_to(content_tag(:i, '', class: 'fas fa-pen'), edit_task_path(task)) %>
           </div>
         </div>
+        <div class="commentWrapper">
+          <% task.comments.each do |comment| %>
+            <%= link_to task_comment_path(task, comment), class:"commentDetail_link" do %>
+              <div class="comment">
+                <h3 class="comment_title"><%= comment.title %></h3>
+                <% if comment.memo.size > 0 %>
+                  <div class="comment_detail is-exist"><i class="fas fa-bars"></i></div>
+                <% end %>
+              </div>
+            <% end %>
+          <% end %>
+          <div class="addComment">
+            <i class="far fa-plus-square"></i>
+            <%= link_to "さらにコメントを追加", new_task_comment_path(task), class: "addComment_link" %>
+          </div>
+        </div>
       </div>
     <% end %>
   </div>

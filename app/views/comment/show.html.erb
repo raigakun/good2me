@@ -1,0 +1,22 @@
+<div class='commentdetailPage'>
+  <div class="container">
+    <div class="commentContents">
+      <div class="commentContents_title">
+        <div>タイトル</div>
+        <h2><%= @comment.title %></h2>
+      </div>
+      <div class="commentContents_memo">
+        <div>メモ</div>
+        <div><%= @comment.memo %></div>
+      </div>
+      <div class="commentContents_taskStatus">
+        <div>タスク名</div>
+        <div><%= @comment.task.title %></div>
+      </div>
+      <div class="commentContents_btnArea">
+        <%= link_to '編集する', edit_task_comment_path(@comment.task, @comment), class: "edit_btn" %>
+        <%= link_to '削除をする', task_comment_path(@comment.task, @comment), class: "text-danger delete_btn", method: :delete, data: { confirm: "このコメントを削除しても宜しいですか?" } %>
+      </div>
+    </div>
+  </div>
+</div>

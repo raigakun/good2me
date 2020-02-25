@@ -1,0 +1,19 @@
+<div class="commentnewPgae">
+  <div class='container'>
+    <%= form_with model: @comment, url: { action: :create }, html: { class: 'commentnewForm' }, local: true do |f| %>
+      <%= f.hidden_field :task_id, value: @task.id %>
+      <% if @comment.errors.any? %>
+        <p class="text-danger">タイトルは1～255文字以内で入力してください</p>
+      <% end %>
+      <div class="commentnewForm_title">
+        <%= f.label :title %>
+        <%= f.text_field :title, autofocus: true, class: "form-control", placeholder: "コメント名" %>
+      </div>
+      <div class="commentnewForm_memo">
+        <%= f.label :memo %>
+        <%= f.text_area :memo, autofocus: true, class: "form-control", placeholder: "詳細" %>
+      <div class="text-center"><%= f.submit "作成する", class: "submitBtn" %></div>
+      </div>
+    <% end %>
+  </div>
+</div>
