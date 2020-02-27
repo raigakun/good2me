@@ -1,0 +1,12 @@
+
+
+
+<%# .contents
+    .contents__member
+      .contents__member__current-group
+        .group-name
+          = @group.name
+        .member-name
+          member :
+          - @group.users.each do |group_user|
+            = group_user.name %>

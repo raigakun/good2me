@@ -3,17 +3,19 @@
     <ul class="header_menu">
       <li class="nav-link"><%= current_user.username %>さん</li>
        <li class="header_menu_groups">
-       <%= link_to "Create Groups", new_group_path,class: "nav-link",method: :get %><a class="header_menu_currents">
-       所属グループ：
+       <%= link_to "Create Group", new_group_path,class: "listNew4",method: :get %><a class="header_menu_currents">
+       Your Groups：
        <% current_user.groups.each do |group|%>
+       <%= link_to group_task_index_path(group),class: "header_menu_currents_name",method: :get do %>
        <%= group.name%>
-       <% end %></a></li>
+       <% end %></a><% end %></li>
+       
       <li class="header_menu_title"><%= link_to "TasKING", root_path, class: "nav-link" %></li>
       <li>
         <ul class="header_menu_inner">
-          <li><%= link_to "Create Tasks", new_task_path, class: "nav-link listNew" %></li>
-          <li><%= link_to "Edit", edit_user_registration_path, class: "nav-link", method: :get %></li>
-          <li><%= link_to "Sign out", destroy_user_session_path, class: "nav-link", method: :delete %></li>
+          <li><%= link_to "Create Tasks", new_task_path, class: "nav-link listNew1" %></li>
+          <li><%= link_to "Edit", edit_user_registration_path, class: "nav-link listNew2", method: :get %></li>
+          <li><%= link_to "Sign out", destroy_user_session_path, class: "nav-link listNew3", method: :delete %></li>
 
         </ul>
       </li>

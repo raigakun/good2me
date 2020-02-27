@@ -40,8 +40,10 @@ ActiveRecord::Schema.define(version: 2020_02_25_061850) do
   create_table "tasks", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "title", null: false
     t.bigint "user_id", null: false
+    t.bigint "group_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["group_id"], name: "index_tasks_on_group_id"
     t.index ["user_id"], name: "index_tasks_on_user_id"
   end
 
@@ -58,5 +60,6 @@ ActiveRecord::Schema.define(version: 2020_02_25_061850) do
 
   add_foreign_key "group_users", "groups"
   add_foreign_key "group_users", "users"
+  add_foreign_key "tasks", "groups"
   add_foreign_key "tasks", "users"
 end
