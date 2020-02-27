@@ -1,7 +1,10 @@
 .topPage {
   min-height: 93vh;
   padding-top: 30px;
-  background: #bababa;
+  background-image: url("/fff.jpg");
+  background-size: cover;
+  background-color:rgba(255,255,255,0.5);
+  // background-blend-mode:lighten;
   overflow-x: scroll;
   .taskWrapper {
     display: flex;

@@ -1,0 +1,15 @@
+<header class="header2">
+  <nav class="nav2">
+    <ul class="header_menu2">
+      <li class="nav-link">
+        <%= @group.name %>
+      </li>
+      <ul class="header_menu2_inner2">
+        <li><%= link_to "Create Group Tasks", new_group_task_path(@group), class: "nav-link listNew2" %></li>
+        <li><%= link_to "Edit Group",edit_group_path(@group), class: "nav-link", method: :get %></li>
+      </ul>
+    </ul>
+  </nav>
+</header>
+
+

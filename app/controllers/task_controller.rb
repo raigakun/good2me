@@ -2,6 +2,10 @@ class TaskController < ApplicationController
 
   before_action :set_task, only: [:edit, :update, :destroy]
 
+  def index
+    @group = Group.find_by(id: params[:group_id])
+  end
+
   def new
     @task = Task.new
   end
@@ -16,6 +20,7 @@ class TaskController < ApplicationController
   end
 
   def edit
+    @group = Group.find_by(id: params[:group_id])
   end
 
   def update
