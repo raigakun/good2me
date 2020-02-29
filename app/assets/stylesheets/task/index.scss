@@ -1,7 +1,7 @@
 body {
   overflow: visible;
-  background-image: url("/fff.jpg");
-  background-size: cover;
+  // background-image: url("/fff.jpg");
+  // background-size: cover;
   // background-color:rgba(255,255,255,0.5);
   // background-blend-mode:lighten;
 }
@@ -44,9 +44,25 @@ body {
         padding: 0;
         align-items: center;
         .listNew2 {
+          transition: opacity .5s;
+          &:hover {
+            opacity: .6;
+          }
           &:after {
             font-family: "Font Awesome 5 Free";
             content: "\f022";
+            display: inline-block;
+            margin-left: 10px;
+            font-size: 20px;
+          }
+        }
+        .listNew3 {
+          transition: opacity .5s;
+            &:hover {
+            opacity: .6;
+            }
+          &:after {
+            font-family: "Font Awesome 5 Free";
             display: inline-block;
             margin-left: 10px;
             font-size: 20px;

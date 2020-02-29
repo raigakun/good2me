@@ -8,6 +8,6 @@ Rails.application.routes.draw do
     resources :comment, except: :index
   end
   resources :groups, only: [ :new, :create, :edit, :update] do
-    resources :task, only: [:index, :new, :create, :edit, :update, :destroy]
+    resources :task, only: [:index, :new, :new2, :create, :edit, :update, :destroy]
   end
 end

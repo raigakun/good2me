@@ -11,6 +11,7 @@
 
   <body>   
     <%= render 'partial/header' if current_user %>
+    <%# <%= render 'partial/header2' if @group %>
     <% if flash[:notice] %>
       <div class="alert alert-info">
         <%= flash[:notice] %>

@@ -1,12 +1,32 @@
-<div class="tasknewPage">
-  <div class="container">
-    <%= form_with model: @task, url: { action: :create }, class: "new_task", local: true do |f| %>
-      <% if @task.errors.any? %>
-        <p class="text-danger">タイトルは1～255文字以内で入力してください</p>
+<% - if @group.present?%>
+  <header class="header2">
+    <nav class="nav2">
+      <ul class="header_menu2">
+          <li class="nav-link">
+              <%= @group.name %>
+          </li>
+          <ul class="header_menu2_inner2">
+            <li><%= link_to "Create Group Tasks", new_group_task_path(@group), class: "nav-link listNew2", method: :get %></li>
+            <li><%= link_to "Edit Group",edit_group_path(@group), class: "nav-link listNew3", method: :get %></li>
+          </ul>
+        </ul>
+    </nav>
+  </header>
+  <div class="tasknewPage">
+    <div class="container">
+      <%= form_with model: @task, url: { action: :create }, class: "new_task", local: true do |f| %>
+        <%= f.label :"Group task title" %>
+        <%= f.text_field :title, autofocus: true, class: "form-control taskName", placeholder: "Group Task Name" %>
+        <div class="text-center"><%= f.submit "作成", class: "submitBtn" %></div>
       <% end %>
-      <%= f.label :title %>
-      <%= f.text_field :title, autofocus: true, class: "form-control taskName", placeholder: "タスク名" %>
-      <div class="text-center"><%= f.submit "作成", class: "submitBtn" %></div>
-    <% end %>
-  </div>
-</div>
+
+<%  else %>
+  <div class="tasknewPage2">
+    <div class="container">
+  <%= form_with model: @task, url: { action: :create }, class: "new_task2", local: true do |f| %>
+    <%= f.label :"Your Task Title" %>
+    <%= f.text_field :title, autofocus: true, class: "form-control taskName", placeholder: "Your Task Name" %>
+    <div class="text-center"><%= f.submit "作成", class: "submitBtn" %></div>
+  <% end %>
+<% end %>
+
