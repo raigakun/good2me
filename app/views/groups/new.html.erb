@@ -1,23 +1,23 @@
 <div class='groupcreate'> 
   <div class="titleArea">
-  <h2>グループを新規作成</h2>
+  <h2>Create your Group </h2>
   <div class="text-center m-3">or</div>
-    <%= link_to "トップページへ戻る", :back %>
+    <%= link_to "back", :back %>
   </div>
 
   <div class='container'>
   <%= form_for @group,local: true do |f| %>
 
-  <div class= 'form-input'>グループ名
+  <div class= 'form-input'>Group Name
       <%= f.text_field :name, placeholder: "グループ名を入力してください",class: "form-control" %>
   </div>
 
-  <div class= 'check-box'>メンバーを選択してください<br>   
-      <%= f.collection_check_boxes :user_ids, User.all, :id, :username, class: "check-name" %>
+  <div class= 'check-box'>Select Member<br>   
+      <%= f.collection_check_boxes :user_ids, User.all, :id, :username,class: "check-name" %>
   </div> 
 
   <div class="actions">
-      <%= f.submit "グループを作成する", class: "btn submitBtn" %>
+      <%= f.submit "Create", class: "btn submitBtn" %>
   </div>   
   <% end %>
 

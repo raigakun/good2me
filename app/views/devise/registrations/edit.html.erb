@@ -1,8 +1,8 @@
 <div class='editPage'>
   <div class="titleArea">
-    <h1>アカウントを編集</h1>
+    <h1>Edit your Account</h1>
     <div class="text-center m-3">or</div>
-    <%= link_to "トップページへ戻る", :back %>
+    <%= link_to "back", :back %>
   </div>
 
     <div class='container'>
@@ -34,7 +34,7 @@
     </div>
 
     <div class="actions">
-      <%= f.submit "アップデート", class: "btn submitBtn" %>
+      <%= f.submit "Update", class: "btn submitBtn" %>
     </div>
   <% end %>
 
@@ -49,10 +49,10 @@
 
 
   <div class="titleArea2">
-    <h3>アカウントを削除</h3>
+    <h3>Delete your Account</h3>
   </div>
   <div class="unhappy">
-    <p>お待ちしております！ <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, class: "btn submitBtn",method: :delete %></p>
+    <p>お待ちしております！ <%= button_to " See you soon!", registration_path(resource_name), data: { confirm: "Are you sure?" }, class: "btn submitBtn",method: :delete %></p>
   </div>
 </div>
 
