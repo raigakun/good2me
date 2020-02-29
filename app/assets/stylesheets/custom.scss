@@ -4,7 +4,7 @@ body {
   // background-size: cover;
   // background-color:rgba(255,255,255,0.5);
   // background-blend-mode:lighten;
-  
+
 }
 
 .notice,
@@ -138,9 +138,10 @@ body {
 }
 
 // sign_up
-.sinupPage {
+.signupPage {
   margin-top: 10vh;
   .titleArea {
+    margin: 70px;
     text-align: center;
     h1 {font-size: 2rem;}
   }
@@ -194,7 +195,7 @@ body {
 .signinPage {
   margin-top: 10vh;
   .title {
-    margin: 0;
+    margin: 80px;
     text-align: center;
   }
   .new_user {
@@ -263,11 +264,13 @@ body {
   .yajirushi{
     margin-top: 30vh;
     text-align: center;
-    color: white;
+    color: #fff;
+    text-shadow: 1px 1px 1px #ff9800, -1px 1px 1px #ff9800, 1px -1px 1px #ff9800, -1px -1px 1px #ff9800, 1px 1px 1px #ff9800, -1px 1px 1px #ff9800, 1px -1px 1px #ff9800, -1px -1px 1px #ff9800;
   }
   .yajirushi2 {
     text-align: center;
-    color: white;
+    color: #fff;
+    text-shadow: 1px 1px 1px #ff9800, -1px 1px 1px #ff9800, 1px -1px 1px #ff9800, -1px -1px 1px #ff9800, 1px 1px 1px #ff9800, -1px 1px 1px #ff9800, 1px -1px 1px #ff9800, -1px -1px 1px #ff9800;
   }
 
 
@@ -275,12 +278,14 @@ body {
   .titleArea2 {
     text-align: center;
     margin-top: 50vh;
-    color: white;
+    color: #fff;
+    text-shadow: 1px 1px 1px #ff9800, -1px 1px 1px #ff9800, 1px -1px 1px #ff9800, -1px -1px 1px #ff9800, 1px 1px 1px #ff9800, -1px 1px 1px #ff9800, 1px -1px 1px #ff9800, -1px -1px 1px #ff9800;
   }
   .unhappy {
     text-align: center;
     margin-top: 5vh;
-    color: white;
+    color: #fff;
+    text-shadow: 1px 1px 1px #ff9800, -1px 1px 1px #ff9800, 1px -1px 1px #ff9800, -1px -1px 1px #ff9800, 1px 1px 1px #ff9800, -1px 1px 1px #ff9800, 1px -1px 1px #ff9800, -1px -1px 1px #ff9800;
   }
 }
 

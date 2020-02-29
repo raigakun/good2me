@@ -4,9 +4,9 @@
       <% if @task.errors.any? %>
         <p class="text-danger">タイトルは1～255文字以内で入力してください</p>
       <% end %>
-      <%= f.label :title %>
-      <%= f.text_field :title, class: "form-control taskName", placeholder: "タスク名" %>
-      <div class="text-center"><%= f.submit "編集する", class: "submitBtn" %></div>
+      <%= f.label :"Task title" %>
+      <%= f.text_field :title, class: "form-control taskName", placeholder: "Task Name" %>
+      <div class="text-center"><%= f.submit "Update", class: "submitBtn" %></div>
     <% end %>
   </div>
 </div>

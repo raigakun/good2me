@@ -16,8 +16,8 @@
     <div class="container">
       <%= form_with model: @task, url: { action: :create }, class: "new_task", local: true do |f| %>
         <%= f.label :"Group task title" %>
-        <%= f.text_field :title, autofocus: true, class: "form-control taskName", placeholder: "Group Task Name" %>
-        <div class="text-center"><%= f.submit "作成", class: "submitBtn" %></div>
+        <%= f.text_field :title, autofocus: true, class: "form-control taskName", placeholder: "タスク名を入力してください" %>
+        <div class="text-center"><%= f.submit "Create", class: "submitBtn" %></div>
       <% end %>
 
 <%  else %>
@@ -25,8 +25,8 @@
     <div class="container">
   <%= form_with model: @task, url: { action: :create }, class: "new_task2", local: true do |f| %>
     <%= f.label :"Your Task Title" %>
-    <%= f.text_field :title, autofocus: true, class: "form-control taskName", placeholder: "Your Task Name" %>
-    <div class="text-center"><%= f.submit "作成", class: "submitBtn" %></div>
+    <%= f.text_field :title, autofocus: true, class: "form-control taskName", placeholder: "タスク名を入力してください" %>
+    <div class="text-center"><%= f.submit "Create", class: "submitBtn" %></div>
   <% end %>
 <% end %>
 

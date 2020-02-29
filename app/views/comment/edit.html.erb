@@ -6,17 +6,17 @@
       <% end %>
       <div class="commenteditForm_title">
         <%= f.label :title %>
-        <%= f.text_field :title, class: "form-control", placeholder: "コメント名" %>
+        <%= f.text_field :title, class: "form-control", placeholder: "タイトルを入力してください" %>
       </div>
       <div class="commenteditForm_memo">
         <%= f.label :memo %>
-        <%= f.text_area :memo, class: "form-control", placeholder: "詳細" %>
+        <%= f.text_area :memo, class: "form-control", placeholder: "詳細を入力してください" %>
       </div>
       <div class="commenteditForm_memo">
-        <label>タスク名</label>
+        <label>Destination (保管先を変更する場合、選択してください)</label>
         <%= select :comment, :task_id, @tasks.map{ |t| [t.title, t.id] }, {}, { class: 'form-control' } %>
       </div>
-      <div class="text-center"><%= f.submit "更新する", class: "submitBtn" %></div>
+      <div class="text-center"><%= f.submit "Update", class: "submitBtn" %></div>
     <% end %>
   </div>
 </div>
