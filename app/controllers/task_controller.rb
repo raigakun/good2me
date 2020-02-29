@@ -7,10 +7,27 @@ class TaskController < ApplicationController
   end
 
   def new
+    @group = Group.find_by(id: params[:group_id])
     @task = Task.new
   end
 
   def create
+    if @group = Group.find_by(id: params[:group_id])
+      group_create(@group, task_params)
+    else
+      private_create(task_params)
+    end
+  end
+  
+  def group_create(group, param)
+    @task = group.tasks.new(param)
+    if @task.save
+      redirect_to group_task_index_path(group)
+    else
+      render :new
+    end
+  end
+  def private_create(param)
     @task = Task.new(task_params)
     if @task.save
       redirect_to :root

@@ -4,5 +4,5 @@ class Task < ApplicationRecord
   # belongs_to :groups
   has_many :comments, dependent: :destroy
 
-  validates :title, length: {in: 1..255}
+  # validates :title, length: {in: 1..255}
 end
