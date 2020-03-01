@@ -16,6 +16,7 @@
         <label>Destination (保管先を変更する場合、選択してください)</label>
         <%= select :comment, :task_id, @tasks.map{ |t| [t.title, t.id] }, {}, { class: 'form-control' } %>
       </div>
+      <%= f.hidden_field :order, value: @comment.order %>
       <div class="text-center"><%= f.submit "Update", class: "submitBtn" %></div>
     <% end %>
   </div>

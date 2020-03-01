@@ -10,16 +10,20 @@
           </div>
         </div>
         <div class="commentWrapper">
-          <% task.comments.each do |comment| %>
-            <%= link_to task_comment_path(task, comment), class:"commentDetail_link" do %>
-              <div class="comment" draggable="true">
-                <h3 class="comment_title"><%= comment.title %></h3>
-                <% if comment.memo.size > 0 %>
-                  <div class="comment_detail is-exist"><i class="fas fa-bars"></i></div>
-                <% end %>
-              </div>
-            <% end %>
-          <% end %>
+          <div class="commentTask">
+            <% task.comments.order(:order).each do |comment| %>
+              <%= content_tag "div", id: "comment-#{comment.id}", data: { model_name: comment.class.name.underscore, update_url: task_comment_sort_path(comment.task, comment)} do %>
+                <div class="comment">
+                  <%= link_to task_comment_path(task, comment), class:"commentDetail_link" do %>
+                    <div class="comment_title"><%= comment.title %></div>
+                    <% if comment.memo.size > 0 %>
+                      <div class="comment_detail is-exist"><i class="fas fa-bars"></i></div>
+                    <% end %>
+                  <% end %>
+                </div>
+              <% end %>
+            <% end %>  
+          </div>    
           <div class="addComment">
             <i class="far fa-plus-square"></i>
             <%= link_to "Add Comments", new_task_comment_path(task), class: "addComment_link" %>
