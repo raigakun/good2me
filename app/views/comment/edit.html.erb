@@ -6,11 +6,11 @@
       <% end %>
       <div class="commenteditForm_title">
         <%= f.label :title %>
-        <%= f.text_field :title, class: "form-control", placeholder: "タイトルを入力してください" %>
+        <%= f.text_field :title, class: "form-control", placeholder: "タイトルを入力してください。  Markdownで記入できます。" %>
       </div>
       <div class="commenteditForm_memo">
         <%= f.label :memo %>
-        <%= f.text_area :memo, class: "form-control", placeholder: "詳細を入力してください" %>
+        <%= f.text_area :memo, class: "form-control", placeholder: "詳細を入力してください。  Markdownで記入できます。" %>
       </div>
       <div class="commenteditForm_memo">
         <label>Destination (保管先を変更する場合、選択してください)</label>

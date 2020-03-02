@@ -3,15 +3,15 @@
     <div class="commentContents">
       <div class="commentContents_title">
         <div>Comment title</div>
-        <h2><%= @comment.title %></h2>
+        <span><h2><%= markdown(@comment.title)%></h2></span>
       </div>
       <div class="commentContents_memo">
         <div>Memo</div>
-        <div><%= @comment.memo %></div>
+        <span><div><%= markdown(@comment.memo)%></div></span>
       </div>
       <div class="commentContents_taskStatus">
         <div>Storage (現在の保管場所)</div>
-        <div><%= @comment.task.title %></div>
+        <span><div><%= markdown(@comment.task.title) %></div></span>
       </div>
       <div class="commentContents_btnArea">
         <%= link_to 'Edit', edit_task_comment_path(@comment.task, @comment), class: "edit_btn" %>

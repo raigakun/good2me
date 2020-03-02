@@ -16,7 +16,7 @@
     <div class="container">
       <%= form_with model: @task, url: { action: :create }, class: "new_task", local: true do |f| %>
         <%= f.label :"Group task title" %>
-        <%= f.text_field :title, autofocus: true, class: "form-control taskName", placeholder: "タスク名を入力してください" %>
+        <%= f.text_field :title, autofocus: true, class: "form-control taskName", placeholder: "タスク名を入力してください。  Markdownで記入できます。" %>
         <div class="text-center"><%= f.submit "Create", class: "submitBtn" %></div>
       <% end %>
 
@@ -25,7 +25,7 @@
     <div class="container">
   <%= form_with model: @task, url: { action: :create }, class: "new_task2", local: true do |f| %>
     <%= f.label :"Your Task Title" %>
-    <%= f.text_field :title, autofocus: true, class: "form-control taskName", placeholder: "タスク名を入力してください" %>
+    <%= f.text_field :title, autofocus: true, class: "form-control taskName", placeholder: "タスク名を入力してください。  Markdownで記入できます。" %>
     <div class="text-center"><%= f.submit "Create", class: "submitBtn" %></div>
   <% end %>
 <% end %>
