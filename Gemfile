@@ -71,4 +71,4 @@ gem 'devise'
 gem 'pry-rails'
 gem 'jquery-ui-rails'
 gem 'ranked-model'
-
+gem 'redcarpet'

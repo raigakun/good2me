@@ -7,11 +7,11 @@
       <% end %>
       <div class="commentnewForm_title">
         <%= f.label :"Comment Title" %>
-        <%= f.text_field :title, autofocus: true, class: "form-control", placeholder: "タイトルを入力してください" %>
+        <%= f.text_field :title, autofocus: true, class: "form-control", placeholder: "タイトルを入力してください。  Markdownで記入できます。" %>
       </div>
       <div class="commentnewForm_memo">
         <%= f.label :Memo %>
-        <%= f.text_area :memo, autofocus: true, class: "form-control", placeholder: "詳細を入力してください" %>
+        <%= f.text_area :memo, autofocus: true, class: "form-control", placeholder: "詳細を入力してください。 Markdownで記入できます。" %>
       <div class="text-center"><%= f.submit "Create ", class: "submitBtn" %></div>
       </div>
     <% end %>

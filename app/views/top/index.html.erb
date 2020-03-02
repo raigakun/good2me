@@ -3,7 +3,7 @@
     <% @tasks.each do |task| %>
       <div class="task">
         <div class="task_header">
-          <h2 class="task_header_title"><%= task.title %></h2>
+          <h2 class="task_header_title"><span><%= markdown(task.title)%></span></h2>
           <div class="task_header_action">
              <%= link_to content_tag(:i, '', class: 'fas fa-trash'), task, method: :delete, data: { confirm: "#{task.title}を本当に削除しますか？" } %>
             <%= link_to(content_tag(:i, '', class: 'fas fa-pen'), edit_task_path(task)) %>
@@ -15,7 +15,7 @@
               <%= content_tag "div", id: "comment-#{comment.id}", data: { model_name: comment.class.name.underscore, update_url: task_comment_sort_path(comment.task, comment)} do %>
                 <div class="comment">
                   <%= link_to task_comment_path(task, comment), class:"commentDetail_link" do %>
-                    <div class="comment_title"><%= comment.title %></div>
+                    <div class="comment_title"><span><%= markdown(comment.title)%></span></div>
                     <% if comment.memo.size > 0 %>
                       <div class="comment_detail is-exist"><i class="fas fa-bars"></i></div>
                     <% end %>
