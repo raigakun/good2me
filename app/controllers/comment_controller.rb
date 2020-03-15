@@ -22,7 +22,7 @@ class CommentController < ApplicationController
 
   def edit
     @tasks = Task.where(user: current_user)
-    @comments = Comment.where(task_id: params[:task_id]).order(:order)
+    @comments = Comment.where(task_id: params[:task_id]).rank(:row_order)
   end
 
   def update
@@ -74,7 +74,7 @@ class CommentController < ApplicationController
 
   private
     def comment_params
-      params.require(:comment).permit(:title, :memo, :task_id, :order)
+      params.require(:comment).permit(:title, :memo, :task_id, :order, :row_order_position)
     end
 
     def set_comment

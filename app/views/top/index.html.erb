@@ -11,7 +11,7 @@
         </div>
         <div class="commentWrapper">
           <div class="commentTask">
-            <% task.comments.order(:order).each do |comment| %>
+            <% task.comments.rank(:row_order).each do |comment| %>
               <%= content_tag "div", id: "comment-#{comment.id}", data: { model_name: comment.class.name.underscore, update_url: task_comment_sort_path(comment.task, comment)} do %>
                 <div class="comment">
                   <%= link_to task_comment_path(task, comment), class:"commentDetail_link" do %>
