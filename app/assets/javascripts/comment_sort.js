@@ -10,7 +10,7 @@ $(function () {
       let item_data = item.data();
       let params = { _method: 'put' };
       params[item_data.modelName] = {
-        order_position: item.index()
+        row_order_position: item.index()
       };
       $.ajax({
         type: 'POST',
