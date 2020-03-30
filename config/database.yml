@@ -50,5 +50,6 @@ test:
 production:
   <<: *default
   database: good2me_production
-  username: good2me
-  password: <%= ENV['GOOD2ME_DATABASE_PASSWORD'] %>
+  username: root
+  password: <%= ENV['DATABASE_PASSWORD'] %>
+  socket: /var/lib/mysql/mysql.sock
